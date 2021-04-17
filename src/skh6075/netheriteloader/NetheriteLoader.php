@@ -21,34 +21,18 @@ use skh6075\netheriteloader\item\NetheriteSword;
 
 class NetheriteLoader extends PluginBase{
 
-
-
     protected function onLoad (): void{
-        ItemFactory::getInstance()->register(new NetheritePickaxe(new ItemIdentifier(745, 0), "Netherite Pickaxe", ToolTier::DIAMOND()));
-        ItemFactory::getInstance()->register(new NetheriteSword(new ItemIdentifier(743, 0), "Netherite Sword", ToolTier::DIAMOND()));
-        ItemFactory::getInstance()->register(new NetheriteShovel(new ItemIdentifier(744, 0), "Netherite Shovel", ToolTier::DIAMOND()));
-        ItemFactory::getInstance()->register(new NetheriteAxe(new ItemIdentifier(746, 0), "Netherite Axe", ToolTier::DIAMOND()));
-        ItemFactory::getInstance()->register(new NetheriteHoe(new ItemIdentifier(747, 0), "Netherite Hoe", ToolTier::DIAMOND()));
+        $factory = ItemFactory::getInstance();
 
-        ItemFactory::getInstance()->register(new NetheriteHelmet(
-            new ItemIdentifier(748, 0),
-            "Netherite Helmet",
-            new ArmorTypeInfo(3, 407, ArmorInventory::SLOT_HEAD)
-        ));
-        ItemFactory::getInstance()->register(new NetheriteChestplate(
-            new ItemIdentifier(749, 0),
-            "Netherite Chestplate",
-            new ArmorTypeInfo(5, 592, ArmorInventory::SLOT_CHEST)
-        ));
-        ItemFactory::getInstance()->register(new NetheriteLeggings(
-            new ItemIdentifier(750, 0),
-            "Netherite Leggings",
-            new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_LEGS)
-        ));
-        ItemFactory::getInstance()->register(new NetheriteBoots(
-            new ItemIdentifier(751, 0),
-            "Netherite Boots",
-            new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_FEET)
-        ));
+        $factory->register(new NetheritePickaxe(new ItemIdentifier(745, 0), "Netherite Pickaxe", ToolTier::DIAMOND()));
+        $factory->register(new NetheriteSword(new ItemIdentifier(743, 0), "Netherite Sword", ToolTier::DIAMOND()));
+        $factory->register(new NetheriteShovel(new ItemIdentifier(744, 0), "Netherite Shovel", ToolTier::DIAMOND()));
+        $factory->register(new NetheriteAxe(new ItemIdentifier(746, 0), "Netherite Axe", ToolTier::DIAMOND()));
+        $factory->register(new NetheriteHoe(new ItemIdentifier(747, 0), "Netherite Hoe", ToolTier::DIAMOND()));
+
+        $factory->register(new NetheriteHelmet(new ItemIdentifier(748, 0), "Netherite Helmet", new ArmorTypeInfo(3, 407, ArmorInventory::SLOT_HEAD)));
+        $factory->register(new NetheriteChestplate(new ItemIdentifier(749, 0), "Netherite Chestplate", new ArmorTypeInfo(5, 592, ArmorInventory::SLOT_CHEST)));
+        $factory->register(new NetheriteLeggings(new ItemIdentifier(750, 0), "Netherite Leggings", new ArmorTypeInfo(6, 555, ArmorInventory::SLOT_LEGS)));
+        $factory->register(new NetheriteBoots(new ItemIdentifier(751, 0), "Netherite Boots", new ArmorTypeInfo(3, 481, ArmorInventory::SLOT_FEET)));
     }
 }
